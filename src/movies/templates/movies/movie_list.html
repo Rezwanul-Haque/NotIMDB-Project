@@ -1,20 +1,24 @@
 {% extends 'base.html' %}
 
 {% block title %}
-    Movie List
+    All The Movies
 {% endblock title %}
 
 <!-- Main Content -->
 {% block content %}
     <ul>
         {% for movie in object_list %}
-            <li>{{ movie }}</li>
+            <li>
+                <a href="{% url 'movies:movie_detail' pk=movie.id %}">
+                    {{ movie }}
+                </a>
+            </li>
         {% empty %}
             <li>No movies yet.</li>
         {% endfor %}
     </ul>
-    <p>
+    <!-- <p>
         Using https?
         {{ request.is_secure|yesno }}
-    </p>
+    </p> -->
 {% endblock content %}
