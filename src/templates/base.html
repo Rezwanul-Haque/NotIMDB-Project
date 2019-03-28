@@ -4,12 +4,14 @@
 <html lang="en" dir="ltr">
   <head>
     <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fir=no">
+
     <!--css files -->
     {% include "partials/_css.html" %}
 
     {% block extralinks %} {% endblock extralinks %}   <!-- This will help add extra css links needed for a specific page -->
 
-    <title>Site Name{% block title %}{% endblock title %}</title>
+    <title>!IMDB{% block title %}{% endblock title %}</title>
   </head>
   <body>
     <!--Top bar -->
@@ -19,8 +21,18 @@
     {% include "partials/_navbar.html" %}
 
     <!-- Main Content -->
-    {% block content %}
-    {% endblock content %}
+    <div class="container">
+      <div class="row">
+        <div class="col-sm-8 imdb-main">
+          {% block content %}
+          {% endblock content %}
+        </div>
+        <div class="col-sm-3 offset-sm-1 imdb-sidebar">
+          {% block sidebar %}
+          {% endblock sidebar %}
+        </div>
+      </div>
+    </div>
 
     <!-- Footer -->
     {% include "partials/_footer.html" %}
