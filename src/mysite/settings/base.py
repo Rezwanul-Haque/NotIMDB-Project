@@ -84,7 +84,7 @@ USE_TZ = True
 # Static files (CSS, JavaScript, Images)
 
 STATIC_URL = '/static/'
-STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static')]  ## STATICFILES_DIRS is the list of folders where Django will search for additional static files aside from the static folder of each app installed.
+STATICFILES_DIRS = [os.path.join(BASE_DIR, 'static'),]  ## STATICFILES_DIRS is the list of folders where Django will search for additional static files aside from the static folder of each app installed.
 VENV_PATH = os.path.dirname(BASE_DIR)  ## some hosting sites like heroku doesn't allow to create folder out site src folder for that change VENV_PATH references to BASE_DIR
 STATIC_ROOT = os.path.join(VENV_PATH, 'static_root') ## STATIC_ROOT is the folder where static files will be stored after using manage.py collectstatic
 
