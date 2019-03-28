@@ -21,4 +21,6 @@
         Using https?
         {{ request.is_secure|yesno }}
     </p> -->
+    {% include "movies/partials/_pagination.html" %}
+
 {% endblock content %}

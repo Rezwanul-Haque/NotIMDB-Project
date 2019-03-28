@@ -6,6 +6,7 @@ from movies.models import Movie
 # Create your views here.
 class MovieListView(ListView):
     model = Movie
+    paginate_by = 4
 
 
 class MovieDetailView(DetailView):

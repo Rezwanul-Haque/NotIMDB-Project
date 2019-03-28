@@ -4,15 +4,16 @@ from .base import *
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = True
 
-ALLOWED_HOSTS = ['127.0.0.1',]
+ALLOWED_HOSTS = ['127.0.0.1', 'localhost']
 
-INSTALLED_APPS += [
-    'debug_toolbar',
-]
+if DEBUG:
+    INSTALLED_APPS += [
+        'debug_toolbar',
+    ]
 
-MIDDLEWARE += [
-    'debug_toolbar.middleware.DebugToolbarMiddleware',
-]
+    MIDDLEWARE += [
+        'debug_toolbar.middleware.DebugToolbarMiddleware',
+    ]
 
 DATABASES = {
     'default': {
